@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <link rel="stylesheet" type="text/css" href="animate.css">
+
+	<script src="jquery/jquery.js"></script>
+	<script src="jquery/jquery-ui.js"></script>
+	<link rel="stylesheet" href="jquery/jquery-ui.css">
+	
+	<script>
+		
+	</script>
+	
+ </head>
+ <body>
+ 
+	
+
+	
+	
+ 
+ 
+    <img id='rocket' src="assets/rocket.jpg" />
+	<img id='earth' src="assets/earth.jpg" />
+	<img id='moon' src="assets/moon.jpg" />
+	<div id="smoke"></div>
+ </body>
+ 
+	<script>
+	
+	
+	 
+	 
+	makeStars();
+	
+	$('#smoke').effect("explode", "slow") ;	
+	
+	setInterval(function() {
+		$('#smoke').effect("explode", "slow") ;	
+	},15000);
+	
+	setInterval(function() {
+		$('.star').fadeOut("slow") ;	
+	},2000);
+	
+	setInterval(function() {
+		$('.star').fadeIn("slow") ;
+	},3000);
+	
+	
+	
+	function makeStars(){
+
+		var colors = ["#c99418", "#ede855", "#2c6cbf", "red"];
+		
+	
+		for(i=0;i<20;i++){
+			starX=Math.floor((Math.random()*90)+1)
+			starY=Math.floor((Math.random()*50)+1)
+			starColor=colors[Math.floor(Math.random()*colors.length)]
+			starID="star"+i
+			$('body').append("<div class='star' id='"+starID+"'></div>")
+			$('#'+starID).css("margin-left",starX+"%")
+			$('#'+starID).css("margin-top",starY+"%")
+			$('#'+starID).css("background-color",starColor)
+			
+		}
+	}
+	
+	
+	
+	 
+	
+		
+		
+	
+	
+	 
+	 
+	$('body').click(function() {
+		$('.comet').remove();
+		$('body').append("<div class='comet'></div>")
+		cometX=Math.floor((Math.random()*90)+1);
+		cometY=Math.floor((Math.random()*50)+1);
+		$('.comet').css("margin-left",cometX+"%");
+		$('.comet').css("margin-top",cometY+"%");
+	})
+		
+		
+		
+	</script>
+</html>
